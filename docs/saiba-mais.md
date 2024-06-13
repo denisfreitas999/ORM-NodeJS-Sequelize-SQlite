@@ -13,3 +13,9 @@ npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:st
 # Aplicando migração do modelo para o banco de dados
 
 npx sequelize-cli db:migrate
+
+# Populando o banco com os arquivos seeders
+
+npx sequelize-cli seed:generate --name demo-pessoa
+
+npx sequelize-cli db:seed:all
