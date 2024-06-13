@@ -10,6 +10,12 @@ npx sequelize-cli init
 
 npx sequelize-cli model:generate --name Pessoa --attributes nome:string,email:string,cpf:string,ativo:boolean,role:string
 
+npx sequelize-cli model:generate --name Categoria --attributes titulo:string
+
+npx sequelize-cli model:generate --name Curso --attributes titulo:string,descricao:string,data_inicio:dateonly
+
+npx sequelize-cli model:generate --name Matricula --attributes status:string
+
 # Aplicando migração do modelo para o banco de dados
 
 npx sequelize-cli db:migrate
