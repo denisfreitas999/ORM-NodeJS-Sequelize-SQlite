@@ -24,4 +24,14 @@ npx sequelize-cli db:migrate
 
 npx sequelize-cli seed:generate --name demo-pessoa
 
+npx sequelize-cli seed:generate --name demo-categorias
+
+npx sequelize-cli seed:generate --name demo-cursos
+
+npx sequelize-cli seed:generate --name demo-matriculas
+
 npx sequelize-cli db:seed:all
+
+npx sequelize-cli db:seed --seed 20240613182325-demo-categorias.js
+npx sequelize-cli db:seed --seed 20240613182344-demo-cursos.js
+npx sequelize-cli db:seed --seed 20240613182402-demo-matriculas.js
