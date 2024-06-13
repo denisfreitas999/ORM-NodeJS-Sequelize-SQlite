@@ -18,7 +18,7 @@ class Controller {
     const { id } = req.params;
     try {
       const umRegistro = await this.entidadeService.pegaUmRegistroPorId(Number(id));
-      return res.status(200).json({ message: 'Registro encontrado com sucesso.' }, umRegistro);
+      return res.status(200).json({ message: 'Registro encontrado com sucesso.', umRegistro });
     } catch (error) {
       // Tratamento de erro
       return res.status(500).json({ message: 'Erro no servidor.' });
