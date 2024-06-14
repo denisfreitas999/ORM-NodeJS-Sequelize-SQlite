@@ -10,7 +10,7 @@ class Controller {
       return res.status(200).json({ message: 'Busca realizada com sucesso.', listaDeRegistro });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -21,7 +21,7 @@ class Controller {
       return res.status(200).json({ message: 'Registro encontrado com sucesso.', umRegistro });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -32,7 +32,7 @@ class Controller {
       return res.status(200).json({ message: 'Registro criado com sucesso', novoRegistroCriado });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -49,7 +49,7 @@ class Controller {
       return res.status(200).json({ message: 'Registro atualizado com sucesso.' });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -60,7 +60,7 @@ class Controller {
       return res.status(200).json({ message: `Registro com o id ${id} excluido com sucesso.` });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
 }
