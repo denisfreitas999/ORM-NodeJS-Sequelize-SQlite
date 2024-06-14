@@ -1,4 +1,6 @@
 'use strict';
+const isCPFValido = require('../../utils/validaCPFHelper.js');
+
 const {
   Model
 } = require('sequelize');
@@ -34,7 +36,14 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    cpf: DataTypes.STRING,
+    cpf: {
+      type: DataTypes.STRING,
+      validate: {
+        cpfEhValido: (cpf) => {
+          if (!isCPFValido(cpf)) throw new Error('O CPF fornecido não é válido.');
+        }
+      }
+    },
     ativo: DataTypes.BOOLEAN,
     role: DataTypes.STRING
   }, {
