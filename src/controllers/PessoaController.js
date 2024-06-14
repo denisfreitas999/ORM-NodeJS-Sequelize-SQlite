@@ -8,14 +8,25 @@ class PessoaController extends Controller {
     super(pessoasServices);
   }
 
-  async pegaMatriculas(req, res) {
+  async pegaMatriculasAtivas(req, res) {
     const { estudanteId } = req.params;
     try {
-      const listaMatriculas = await pessoasServices.pegaMatriculasPorEstudante(Number(estudanteId));
+      const listaMatriculas = await pessoasServices.pegaMatriculasAtivasPorEstudante(Number(estudanteId));
       return res.status(200).json({ message: 'Matriculas buscadas com sucesso.', listaMatriculas });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
+    }
+  }
+
+  async pegaTodasAsMatriculas(req, res) {
+    const { estudanteId } = req.params;
+    try {
+      const listaMatriculas = await pessoasServices.pegaTodasAsMatriculasPorEstudante(Number(estudanteId));
+      return res.status(200).json({ message: 'Matriculas buscadas com sucesso.', listaMatriculas });
+    } catch (error) {
+      // Tratamento de erro
+      return res.status(500).json({ message: error.message });
     }
   }
 
@@ -25,9 +36,10 @@ class PessoaController extends Controller {
       return res.status(200).json({ message: 'Pessoas buscadas com sucesso.', listaTodasAsPessoas });
     } catch (error) {
       // Tratamento de erro
-      return res.status(500).json({ message: 'Erro no servidor.' });
+      return res.status(500).json({ message: error.message });
     }
   }
+
 }
 
 module.exports = PessoaController;
