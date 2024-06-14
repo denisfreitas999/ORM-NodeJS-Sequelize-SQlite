@@ -16,7 +16,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Pessoa.init({
-    nome: DataTypes.STRING,
+    nome: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [2, 30],
+          msg: 'O campo de nome deve conter entre 2 e 30 caracteres.'
+        }
+      }
+    },
     email: {
       type: DataTypes.STRING,
       validate: {
