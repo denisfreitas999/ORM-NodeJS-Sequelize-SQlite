@@ -93,6 +93,7 @@ Na décima e última etapa, foquei em garantir a integridade das operações:
 - **Transações**: Garanti a integridade das operações no banco de dados com transações gerenciadas pelo Sequelize, permitindo reverter mudanças em caso de erros durante a execução de múltiplas operações.
 
 ## 11. Estrutura do Projeto
+```
 📦curso-orm-nodejs-sequelize-sqlite
  ┣ 📂docs
  ┃ ┣ 📜comandos-sequelize.md
@@ -158,3 +159,4 @@ Na décima e última etapa, foquei em garantir a integridade das operações:
  ┣ 📜package.json
  ┣ 📜README.md
  ┗ 📜server.js
+```
